@@ -7,18 +7,26 @@ import LoginScreen from './Screens/LoginScreen'
 import SignupScreen from './Screens/SignupScreen'
 import DashBoardScreen from './Screens/DashBoardScreen'
 import LandingPageScreen from './Screens/LandingPageScreen'
-
-
+import Navbar from './Components/Navbar'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <LoginScreen/>
+    {/* <Navbar/> */}
+    {/* <LoginScreen/> */}
     {/* <SignupScreen/> */}
     {/* <DashBoardScreen/> */}
     {/* <LandingPageScreen/> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPageScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/signup" element={<SignupScreen />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
